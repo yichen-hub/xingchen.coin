@@ -1,0 +1,4 @@
+name: xingchen.coin
+version: '1.0-SNAPSHOT'
+main: xingchen.xingchenCoin.XingchenCoin
+api-version: '1.21'

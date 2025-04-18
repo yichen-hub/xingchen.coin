@@ -1,0 +1,34 @@
+coin:
+  name: 椰金币   #金币的名称
+  lore:         #金币的副标题(lore)
+    - 通过挖掘矿物&作物获取
+    - 可兑换椰块
+diamond_ores:   #钻石
+  chance: 0.5   # 掉落金币的概率
+  amount: 1     # 掉落金币数量
+emerald_ores:   #绿宝石
+  chance: 0.4
+  amount: 1
+gold_ores:      #黄金
+  chance: 0.25
+  amount: 1
+redStone_ores:  #红石
+  chance: 0.2
+  amount: 1
+lapis_ores:     #青金石
+  chance: 0.2
+  amount: 1
+iron_ores:
+  chance: 0.15
+  amount: 1
+copper_ores:    #铜矿
+  chance: 0.5
+  amount: 1
+coal_ores:      #煤炭
+  chance: 0.5
+  amount: 1
+ancient_debris: #远古残骸
+  chance: 0
+  amount: 0
+  #注意!目前远古残骸无法防止刷金币!所以配置文件中的残骸获取金币概率&金币掉落量均已改为0
+  #原掉落概率为0.7
