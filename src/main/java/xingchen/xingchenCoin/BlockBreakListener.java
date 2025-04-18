@@ -15,8 +15,8 @@ public class BlockBreakListener implements Listener {
         Material breakBlockType = e.getBlock().getType();
         if (breakBlockType == Material.DEEPSLATE_DIAMOND_ORE || breakBlockType == Material.DIAMOND_ORE) {
             ItemStack tool = e.getPlayer().getInventory().getItemInMainHand();
-            boolean dropsDiamond = e.getBlock().getDrops(tool).stream().anyMatch(drop -> drop.getType() == Material.DIAMOND);
-            if (!dropsDiamond) {
+            boolean drops = e.getBlock().getDrops(tool).stream().anyMatch(drop -> drop.getType() == Material.DIAMOND);
+            if (!drops) {
                 return;}
             double chance = XingchenCoin.instance.getConfig().getDouble("diamond_ores.chance");
             int amount = XingchenCoin.instance.getConfig().getInt("diamond_ores.amount");
@@ -55,7 +55,7 @@ public class BlockBreakListener implements Listener {
             if (!drops) {
                 return;}
             double chance = XingchenCoin.instance.getConfig().getDouble("lapis_ores.chance");
-            int amount = XingchenCoin.instance.getConfig().getInt("lapis_ores.chance");
+            int amount = XingchenCoin.instance.getConfig().getInt("lapis_ores.amount");
             CoinDrop.DropCoin(e,chance,amount);
         }
         else if (breakBlockType == Material.DEEPSLATE_IRON_ORE||breakBlockType == Material.IRON_ORE){
@@ -83,6 +83,24 @@ public class BlockBreakListener implements Listener {
                 return;}
             double chance = XingchenCoin.instance.getConfig().getDouble("coal_ores.chance");
             int amount = XingchenCoin.instance.getConfig().getInt("coal_ores.amount");
+            CoinDrop.DropCoin(e,chance,amount);
+        }
+        else if (breakBlockType == Material.NETHER_QUARTZ_ORE){
+            ItemStack tool = e.getPlayer().getInventory().getItemInMainHand();
+            boolean drops = e.getBlock().getDrops(tool).stream().anyMatch(drop -> drop.getType() == Material.QUARTZ);
+            if (!drops) {
+                return;}
+            double chance = XingchenCoin.instance.getConfig().getDouble("quartz_ore.chance");
+            int amount = XingchenCoin.instance.getConfig().getInt("quartz.amount");
+            CoinDrop.DropCoin(e,chance,amount);
+        }
+        else if (breakBlockType == Material.NETHER_GOLD_ORE){
+            ItemStack tool = e.getPlayer().getInventory().getItemInMainHand();
+            boolean drops = e.getBlock().getDrops(tool).stream().anyMatch(drop -> drop.getType() == Material.GOLD_NUGGET);
+            if (!drops) {
+                return;}
+            double chance = XingchenCoin.instance.getConfig().getDouble("nether_gold_ore.chance");
+            int amount = XingchenCoin.instance.getConfig().getInt("nether_gold_ore.amount");
             CoinDrop.DropCoin(e,chance,amount);
         }
         //注意!目前远古残骸无法防止刷金币!所以配置文件中的残骸获取金币概率&金币掉落量均已改为0

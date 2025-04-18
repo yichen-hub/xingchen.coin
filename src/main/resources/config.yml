@@ -22,10 +22,16 @@ iron_ores:
   chance: 0.15
   amount: 1
 copper_ores:    #铜矿
-  chance: 0.5
+  chance: 0.05
   amount: 1
 coal_ores:      #煤炭
-  chance: 0.5
+  chance: 0.05
+  amount: 1
+nether_gold_ore:  #下界黄金矿
+  chance: 0.05
+  amount: 1
+quartz_ore:     #石英
+  chance: 0.05
   amount: 1
 ancient_debris: #远古残骸
   chance: 0

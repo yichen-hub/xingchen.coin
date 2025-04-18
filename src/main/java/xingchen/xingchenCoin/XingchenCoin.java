@@ -15,7 +15,6 @@ public final class XingchenCoin extends JavaPlugin {
         instance=this;
         Bukkit.getPluginManager().registerEvents(new BlockBreakListener(), this);
         instance.getLogger().info("Xingchen coin插件加载成功!");
-
         // Plugin startup logic
 
     }
